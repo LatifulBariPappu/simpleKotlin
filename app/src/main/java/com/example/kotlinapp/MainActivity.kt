@@ -18,14 +18,26 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
         binding.btnSub.setOnClickListener(this)
         binding.btnMul.setOnClickListener(this)
         binding.btnDiv.setOnClickListener(this)
-
     }
-
     override fun onClick(v: View?) {
+        var a=binding.et1.text.toString().toDouble()
+        var b=binding.et2.text.toString().toDouble()
+
+        var result=0.0
         when(v?.id){
             R.id.btn_add->{
-
+                result=a+b
+            }
+            R.id.btn_sub->{
+                result=a-b
+            }
+            R.id.btn_mul->{
+                result=a*b
+            }
+            R.id.btn_div->{
+                result=a/b
             }
         }
+        binding.resultTv.text="Result is $result"
     }
 }
